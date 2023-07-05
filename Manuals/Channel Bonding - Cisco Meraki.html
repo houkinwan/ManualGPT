@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="" class="wf-proximanova1-n7-active wf-proximanova1-n1-active wf-proximanova1-i1-active wf-proximanova1-n6-active wf-proximanova1-i4-active wf-proximanova1-n4-active wf-proximanova1-n3-active wf-chaparralpro1-n4-active wf-chaparralpro1-i4-active wf-chaparralpro1-n6-active wf-chaparralpro1-n3-active wf-active wf-sourcecodepro-n4-active wf-ptsans-n4-active wf-ptsans-n7-active wf-ptsans-i4-active wf-sourcecodepro-n7-active"><head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="google-site-verification" content="ErguAk4wKTpg1tEsWB8uz9HopWuJNT1GCGc0w91yllg">
+        <meta name="generator" content="MindTouch 4">
+        <meta name="robots" content="index,follow">
+        <meta property="og:title" content="Channel Bonding">
+        <meta property="og:site_name" content="Cisco Meraki">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:url" content="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding">
+        <meta property="og:image" content="https://a.mtstatic.com/@public/production/site_5814/1446686079-logo.png">
+        <meta property="og:description" content="&quot;Legacy&quot; 802.11 clients use 20MHz channels. To achieve higher data rates, 802.11nspecifies the use of 40MHz wide channels.  Channel bonding commonly uses two contiguous 20MHz channels to create a …">
+        <meta property="article:published_time" content="2015-02-03T17:10:31Z">
+        <meta property="article:modified_time" content="2019-03-01T01:03:36Z">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Channel Bonding">
+        <meta name="twitter:description" content="&quot;Legacy&quot; 802.11 clients use 20MHz channels. To achieve higher data rates, 802.11nspecifies the use of 40MHz wide channels.  Channel bonding commonly uses two contiguous 20MHz channels to create a …">
+        <meta name="twitter:image" content="https://a.mtstatic.com/@public/production/site_5814/1446686079-logo.png">
+        <meta name="description" content="&quot;Legacy&quot; 802.11 clients use 20MHz channels. To achieve higher data rates, 802.11nspecifies the use of 40MHz wide channels.  Channel bonding commonly uses two contiguous 20MHz channels to create a …">
+        <link rel="canonical" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding">
+        <link rel="search" type="application/opensearchdescription+xml" title="Cisco Meraki Search" href="https://documentation.meraki.com/@api/deki/site/opensearch/description">
+        <link rel="apple-touch-icon" href="https://a.mtstatic.com/@public/production/site_5814/1510350395-apple-touch-icon.png">
+        <link rel="shortcut icon" href="https://a.mtstatic.com/@public/production/site_5814/1512171060-favicon.ico">
+
+        <script async="" src="./Channel Bonding - Cisco Meraki_files/fs.js.download"></script><script async="" src="./Channel Bonding - Cisco Meraki_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Channel Bonding - Cisco Meraki_files/ga.js.download"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"TechArticle","name":"Channel Bonding","url":"https:\/\/documentation.meraki.com\/MR\/Radio_Settings\/Channel_Bonding","image":{"@type":"ImageObject","url":"https:\/\/a.mtstatic.com\/@public\/production\/site_5814\/1446686079-logo.png","height":{"@type":"QuantitativeValue","maxValue":315},"width":{"@type":"QuantitativeValue","maxValue":600}},"datePublished":"2015-02-03T17:10:31Z","dateModified":"2019-03-01T01:03:36Z","description":"\"Legacy\" 802.11 clients use 20MHz channels. To achieve higher data rates,\u00a0802.11nspecifies the use of 40MHz wide channels. \u00a0Channel bonding commonly uses two contiguous 20MHz channels to create a single 40MHz channel. While channel bonding can provide higher data rates, it will also result in fewer channels available for 2.4GHz or 5GHz devices.","thumbnailUrl":"https:\/\/documentation.meraki.com\/@api\/deki\/pages\/2095\/thumbnail?default=https%3A%2F%2Fdocumentation.meraki.com%2F%40style%2Fcommon%2Fimages%2Fimage-placeholder.png","mainEntityofPage":{"@type":"WebPage","@id":"https:\/\/documentation.meraki.com\/MR\/Radio_Settings\/Channel_Bonding"},"headline":"Channel Bonding"}</script>
+        <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebPage","name":"Channel Bonding","url":"https:\/\/documentation.meraki.com\/MR\/Radio_Settings\/Channel_Bonding","relatedLink":["https:\/\/documentation.meraki.com\/MR\/Radio_Settings"]}</script>
+        <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/documentation.meraki.com\/MR","name":"Wireless LAN"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/documentation.meraki.com\/MR\/Radio_Settings","name":"Radio Settings"}}]}</script>
+
+        <title>Channel Bonding - Cisco Meraki</title>
+
+        <style type="text/css">blockquote,body,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}q:after,q:before{content:''}caption{margin-bottom:.5em;text-align:center}abbr,acronym,fieldset,img{border:0}</style>
+
+    <style type="text/css">/*<![CDATA[*/
+ #AltLang { 
+    /*
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #e6e6e6;
+    background: #e6e6e6;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 4px;
+    */
+}/*]]>*/</style><style type="text/css">/*<![CDATA[*/
+.mt-foot {
+    display: none;
+}
+
+#contact-support{
+    width: 350px;
+    /*background-image: url('data:image/png;base64,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');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 5em;*/
+    //padding-left: 6em;
+    margin-left: 35px;
+    margin-top: -15px;
+}
+#wishFrame{
+    margin-top: 25px;
+    margin-left: 35px;
+    width: 350px;
+}
+
+/* /begin Added 10/20/17 */
+#contact-sales{
+    width: 350px;
+    margin-left: 80px;
+    margin-top: -15px;
+}
+#contact-sales h2{
+    color: #999;
+}
+#contact-sales a{
+    font-size: larger;
+    color: #999;
+}
+
+/* /end Added 10/20/17 */
+
+/* /begin Added for testing 8/16/17 */
+#ask-community{
+    margin-left: 35px;
+    margin-top: -15px;
+    width: 350px;
+}
+/* /end Added for testing 8/16/17 */
+.clearFix{
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.float-right{
+   display:inline-block;
+   float:right;
+}
+.float-left{
+   display:inline-block;
+   float:left;
+}
+#internal-suggestion {
+    margin: auto;
+    width: 572px;
+    clear: both;
+    margin-top: 2em;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+    padding-top: 2em;
+}
+/* Changes for Docs+KB UI */
+#footerContent{
+    background: #484848; /* grey background color */
+    border-top: 6px solid #282828; /* small black border at the top */
+    margin: auto;
+    width: 1280px;
+    color: #999;
+    clear: both;
+    overflow: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+#contact-support a {
+    font-size: larger;
+    color: #999;
+}
+#contact-support a:hover {
+    color: #0097c8;
+}
+
+#contact-support h2{
+    color: #999; /* makes "contact support" a better grey */
+}
+
+/* /begin Added 8/16/17 */
+#ask-community a {
+    font-size: larger;
+    color: #999;
+}
+#ask-community a:hover {
+    color: #0097c8;
+}
+
+#ask-community h2{
+    color: #999; /* makes "contact support" a better grey */
+}
+/* /end Added 8/16/17 */
+
+#copyright {
+    margin: auto;
+    padding-right: 90px;
+    color: grey;
+    float: right;
+}
+#crfoot {
+    background: #505050;
+    margin: auto;
+    width: 1280px;
+    clear: both;
+    overflow: auto;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+/*]]>*/</style><style type="text/css">/*<![CDATA[*/
+.mt-header-help {
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  background: #484848; /* grey background color */
+}
+.mt-header-help-container {
+  margin: 25px auto 0px;
+  overflow: hidden;
+  width: 1100px;
+  
+}
+.mt-inputredirect {
+  float: right;
+}
+.mt-inputredirect-label {
+  left: -9999em;
+  position: absolute;
+}
+.mt-header-help .mt-inputredirect-input {
+  border-radius: 3px;
+  color: #333;
+  //font-size: 2em;
+  font-size: 20px;
+  height: 38px;
+  /* margin-right: 1px; */
+  /* width: 562px; */
+}
+.mt-header-help .mt-inputredirect .mt-inputredirect-form .mt-inputredirect-button {
+  /* background: url(/skins/beech/cedar/images/icons.png) no-repeat 2px -5167px; */
+  /* border: 0; */
+  /* border-radius: 0; */
+  box-shadow: none;
+  cursor: pointer;
+  /* height: 22px; */
+  /* margin: 13px 0 0 -30px; */
+  /* padding: 0; */
+  text-indent: -9999px;
+  /* width: 20px; */
+}
+.mt-logo,
+.mt-site-search {
+  display: none;
+}
+.mt-header-help .mt-logo {
+  display: block;
+  margin: 0;
+  margin-left: 13px;
+}
+
+/* Cameron Moody Custom CSS */
+.mt-logo2 {
+  float: left;
+  margin: 0;
+  min-height: 47px;
+}
+.mt-header-help .mt-logo2 {
+  display: block;
+  margin: 0;
+  margin-left: 10px;
+}
+.mt-logo2 img{
+  max-width: 220px;
+  width: auto;
+  height: auto;
+}
+
+.mt-header-help .mt-inputredirect .mt-inputredirect-form .mt-inputredirect-button {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABaUlEQVRYw+1VzWrCQBBOqfe2F/GJxHttTwqCh4An0d5T6APkl0BewEPeQYjmdURfwHY7n8zCIg3NdlfSww4sE81s5tv5vpn1PGfOnLW0PM+f4jh+S5KkpnWi9QkfRdGe/DoMw8ebJacEM04qmhYBORLAqfXk9OEPJck2TdNnqka/LMt7eEo6pneVjKHf77ZPjsRn8nMhxN1Pcfif3vscByATK5wrZZ+3BOxLOow1wYK7lL3p5A2V2DEVK9PyQ+0CnOvso/gXrlplCuBSfghNZ1+WZQNJgykA9LmA2nX2BUHQYwBfnVYA+037f89iGmuK99WWBtbyQ5pdUDPwpREA9DGExCD8lqAXzP+hKIoH42GE2a5MQv+XSbiQwqX4jWfLMNuVS2eHPofQoHZ45ry+vpxs3wkThY6m2/CAk98MBDSB8QpRAgz6nFu1guAk51cVswvij7Q5ECqIUacg6HnodWE4eWfJnf17+wZK7rVzei2EjwAAAABJRU5ErkJggg==');
+    //background-color: #BCDE90;
+    //background-color: #78be20;
+    
+    width: 32px;
+    height: 35px;
+    //margin: -10px 0 0 -36px;
+    margin: -7px 0 0 -36px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2px 15px 2px 15px;
+}
+.mt-header-help .mt-inputredirect .mt-inputredirect-form .mt-inputredirect-button:hover {
+    background-color: #EBEBEB;
+}
+
+.mt-header {
+    width: 100% !important;
+    min-width: 950px;
+    position: absolute;
+    background: #f8f8f8;
+}
+
+/*
+    Formats an additional header for pages that are restricted access
+*/
+.restricted-access {
+    text-align: center;
+    font-size: 1.3em;
+    padding: 0.1em;
+}
+.restricted-access.private {
+    background-color: #FFCCCC;
+    border-top: 1px solid rgba(255,0,0,0.25);
+}
+.restricted-access.semi-private {
+    background-color: #FFCF99;
+    border-top: 1px solid rgba(255,128,0,0.25);
+}
+
+/* CSS changes for UI update */
+.mt-header-search {
+  margin: auto;
+  padding-bottom: 11px;
+  width: 912px;
+  height: 41px;
+}
+.mt-header-search .ui-dform-fieldset {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+.mt-header-help .mt-inputredirect-input {
+    width: 840px;
+    margin-right: 32px;
+}
+.mt-header-help ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.mt-header-help li {
+    display: inline;
+    margin-right: 35px;
+    float: right;
+}
+.mt-header-help a {
+    color: #888;
+}/*]]>*/</style>
+
+        <link media="screen" type="text/css" rel="stylesheet" href="./Channel Bonding - Cisco Meraki_files/anonymous.css" id="mt-screen-css">
+
+    
+        <link media="print" type="text/css" rel="stylesheet" href="./Channel Bonding - Cisco Meraki_files/print.css" id="mt-print-css">
+
+
+    <script type="application/json" id="mt-localizations-draft">
+{"Draft.JS.alert.cancel.button":"OK","Draft.JS.alert.cancel.message":"You can not cancel a draft when the live page is unpublished.","Draft.JS.alert.cancel.title":"This draft cannot be canceled","Draft.JS.alert.publish.button":"OK","Draft.JS.alert.publish.message":"You can not publish a draft of a page with an unpublished parent","Draft.JS.alert.publish.title":"This draft cannot be published","Draft.JS.alert.unpublish.button":"OK","Draft.JS.alert.unpublish.message":"You can not unpublish a page when published subpages are present.","Draft.JS.alert.unpublish.title":"This page cannot be unpublished","Draft.JS.success.cancel":"The draft was successfully deleted.","Draft.JS.success.publish":"The draft was successfully published.","Draft.JS.success.unpublish":"The page was successfully unpublished.","Draft.error.cancel":"There was an error cancelling the draft.","Draft.error.publish":"There was an error publishing the draft.","Draft.error.unpublish":"There was an error unpublishing the page.","Dialog.ConfirmSave.StrictIdf.title":"Oops!","Dialog.ConfirmSave.StrictIdf.error.missing-template-reference":"This article type requires a template reference widget. Not having one may negatively impact your site and SEO. Please contact MindTouch support.","Dialog.ConfirmSave.StrictIdf.label.continue":"Proceed anyway","Dialog.ConfirmSave.StrictIdf.label.cancel":"Cancel","Dialog.ConfirmSave.StrictIdf.label.missing-template-reference-help-link":"Learn more about required references","Dialog.ConfirmSave.StrictIdf.error.invalid-idf":"This type of article should not exist at the requested location in the site hierarchy. Proceeding with the requested move may negatively impact site navigation and SEO.","Dialog.ConfirmSave.StrictIdf.label.invalid-idf-help-link":"Learn more about IDF structure"}    </script>    <script type="application/json" id="mt-localizations-editor">
+{"Article.Attach.file.upload.toobig":"The file you selected is too large.  The maximum allowed file size is {0}.","Article.Attach.file.upload.notAllowed":"The selected file can not be uploaded because you do not have permission to upload files of that type.","Article.Attach.file.upload.fileExtension":"You picked a file with an unsupported extension.  Please try again with a valid file.","Article.Common.page-is-restricted-login":"You do not have permission to view this page - please try signing in.","Article.Common.page-save-conflict":"You may have overwritten a concurrent editor's changes. Use this page's <a title=\"Revision History\" target=\"_blank\" href=\"{0}\" >Revision History<\/a> to review.","Article.Edit.extensions-list":"[MISSING: article.edit.extensions-list]","Article.Error.page-couldnt-be-loaded":"The requested page's contents could not be loaded.","Article.Error.page-save-conflict":"A page already exists at {0}. Navigate to the existing page and edit the page if you wish to modify its contents.","Article.Error.page-save-forbidden":"Your session has expired or you do not have permission to edit this page.","Article.edit.summary":"Edit summary","Component.YoutubeSearch.error.key-invalid":"Your YouTube API Key was improperly configured. Please review the article at the <a href=\"{0}\" target=\"_blank\">MindTouch Customer Success Center<\/a>","Component.YoutubeSearch.error.key-missing":"Your MindTouch deployment needs to update your YouTube API Key. Details on how to update can be found at the <a href=\"{0}\" target=\"_blank\">MindTouch Customer Success Center<\/a>","Component.YoutubeSearch.error.search-failed":"Search failed","Component.YoutubeSearch.info.not-found":"No videos found","Component.YoutubeSearch.label.video-url":"Video URL","Component.YoutubeSearch.placeholder.query":"Video URL or YouTube search query","Dialog.ConfirmDeleteRedirects.label.delete-redirects-help-link":"Learn more about deleting redirects","Dialog.ConfirmSave.error.redirect":"A redirect exists at this location and will be deleted if you continue. This may negatively impact your site and SEO. Please contact MindTouch support.","Dialog.ConfirmSave.label.cancel":"Cancel","Dialog.ConfirmSave.label.continue":"Continue","Dialog.ConfirmSave.title":"Delete redirect?","Dialog.ConfirmSave.StrictIdf.error.invalid-idf":"This type of article should not exist at the requested location in the site hierarchy. Proceeding with the requested move may negatively impact site navigation and SEO.","Dialog.ConfirmSave.StrictIdf.error.missing-template-reference-insert":"You've removed the template reference, which is required for this page. Click Insert to reinsert the template reference.","Dialog.ConfirmSave.StrictIdf.label.cancel":"Cancel","Dialog.ConfirmSave.StrictIdf.label.continue":"Proceed anyway","Dialog.ConfirmSave.StrictIdf.label.insert":"Insert","Dialog.ConfirmSave.StrictIdf.label.missing-template-reference-help-link":"Learn more about required references","Dialog.ConfirmSave.StrictIdf.label.invalid-idf-help-link":"Learn more about IDF structure","Dialog.ConfirmSave.StrictIdf.title":"Oops!","Dialog.JS.wikibits-edit-section":"Edit section","Draft.error.save-unpublished":"You cannot save an unpublished draft at {0}. A published page already exists at that location.","GUI.Editor.alert-changes-made-without-saving":"You have made changes to the content without saving your changes. Are you sure you want to exit this page?","GUI.Editor.error.copy-hint":"To avoid losing your work, copy the page contents to a new file and retry saving again.","GUI.Editor.error.server-error":"A server error has occurred.","GUI.Editor.error.unable-to-save":"We are unable to save this page","System.API.Error.invalid-redirect":"Cannot create a redirect on a page with sub-pages.","System.API.Error.invalid-redirect-target":"The redirect does not point at a valid page."}    </script>    <script type="application/json" id="mt-localizations-file-uploader">
+{"Dialog.Attach.allowed-types":"Allowed file types:","Dialog.Attach.button.upload":"Upload","Dialog.Attach.choose-files-dad":"Choose files to upload or drag and drop files into this window.","Dialog.Attach.max-size":"Maximum upload file size: {0}"}    </script>    <script type="application/json" id="mt-localizations-grid-widget">
+{"Article.Common.page-is-restricted-login":"You do not have permission to view this page - please try signing in.","MindTouch.Help.Page.search-unavailable":"Sorry, search is currently unavailable.","Page.StructuredTags.error-update":"An unknown error occurred."}    </script>    <script type="application/json" id="mt-localizations-tree-widget">
+{"Skin.Common.home":"Home","Dialog.Common.error.path-not-found":"The requested page or section could not be loaded. Please update the link.","Dialog.JS.loading":"Loading...","Dialog.JS.loading.copy":"Copying page(s)...","Dialog.JS.loading.insertImage":"Inserting image...","Dialog.JS.loading.move":"Moving page(s)...","Dialog.JS.loading.moveFile":"Moving file...","Dialog.JS.loading.search":"Searching...","MindTouch.Help.Page.in":"in","MindTouch.Help.Page.no-search-results":"Sorry, we can't find what you are looking for.","MindTouch.Help.Page.no-search-try":"Try searching for something else, selecting a category, or try creating a ticket.","MindTouch.Help.Page.retrysearch":"Click here to search the whole site.","MindTouch.Help.Page.search-error-try":"Please try again later.","MindTouch.Help.Page.search-unavailable":"Sorry, search is currently unavailable."}    </script>
+    <script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/globals.js.download"></script><script type="application/json" id="mt-global-settings">{"articleType":"reference","apiToken":"xhr_2_1553151739_0a3d84f4c29895331cb8def5277f08234d8a2d135a8b11c0cea657a908ceaca0","attachFileMax":1000,"baseHref":"https:\/\/documentation.meraki.com","cacheFingerprint":"0be68d18aa5bb700b3a1c9476c69c77dbe09c948:site_5814","cdnHostname":"a.mtstatic.com","clientSideWarnings":false,"draftEditable":false,"followRedirects":1,"idfHideTemplateTags":false,"idfVersion":"IDF2","isDraftAllowed":false,"isDraftRequest":false,"isF1Request":false,"isReportDownloadEnabled":false,"isSkinResponsive":false,"isXhrF1WebWidgetEnabled":true,"isXhrIEMode":false,"learningPathsEnabled":false,"kcsEnabled":false,"maxFileSize":268435456,"moduleMode":"global","pageEditable":false,"pageId":2095,"pageIsRedirect":false,"pageLanguageCode":"en-US","pageName":"Channel Bonding","pageNamespace":"","pageOrderLimit":1000,"pagePermissions":["LOGIN","BROWSE","READ","SUBSCRIBE"],"pageRevision":"3","pageSectionEditable":false,"pageTitle":"MR\/Radio Settings\/Channel Bonding","pathCommon":"\/@style\/common","pathSkin":"\/@style\/cedar","relatedArticlesDetailed":false,"removeBlankTemplate":false,"removeDeleteCheckbox":true,"scriptParser":2,"sessionId":"b1d57822-221e-4531-8297-1b7ab0900e8e","showAllTemplates":true,"skinStyle":"beech.cedar","siteAuthoringPageThumbnailManagementEnabled":true,"strictIdfEnabled":false,"userId":2,"userIsAnonymous":true,"userIsSeated":false,"userIsAdmin":false,"userName":"Anonymous User","userPermissions":["LOGIN","BROWSE","READ","SUBSCRIBE"],"userSystemName":"Anonymous","userTimezone":"-07:00","webFontConfig":{"google":{"families":["PT Sans:r,b,i","Source Code Pro:r,b"]}}}</script><script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/deki.legacy.js.download"></script><script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/community.js.download"></script><script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/skin_cedar.js.download"></script><script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/pageBootstrap.js.download"></script>
+
+    
+<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-51174192-2']),_gaq.push(['_setDomainName','documentation.meraki.com']),_gaq.push(['_trackPageview']),function(){var t=document.createElement('script');t.type='text/javascript',t.async=!0,t.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(t,a)}();(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-65721316-2','documentation.meraki.com',{name:'mtTracker',allowLinker:true});ga('mtTracker.require','linker');ga('mtTracker.send','pageview');document.addEventListener('mindtouch-web-widget:f1:loaded',function(e){var t=e.data||{},d=t.widget;d&&''!==t.embedId&&document.addEventListener('mindtouch-web-widget:f1:clicked',function(e){var t=(e.data||{}).href;if(t){var n=document.createElement('a');n.setAttribute('href',t),'success.mindtouch.com'===n.hostname&&(e.preventDefault(),ga('linker:decorate',n),d.open(n.href))}})});</script><style type="text/css">.tk-proxima-nova{font-family:"proxima-nova-1","proxima-nova-2",sans-serif;}.tk-chaparral-pro{font-family:"chaparral-pro-1","chaparral-pro-2",sans-serif;}</style><style type="text/css">@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/l?subset_id=2&fvd=n1&v=3) format("woff2"),url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/d?subset_id=2&fvd=n1&v=3) format("woff"),url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/a?subset_id=2&fvd=n1&v=3) format("opentype");font-weight:100;font-style:normal;}@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/l?subset_id=2&fvd=i1&v=3) format("woff2"),url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/d?subset_id=2&fvd=i1&v=3) format("woff"),url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/a?subset_id=2&fvd=i1&v=3) format("opentype");font-weight:100;font-style:italic;}@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:proxima-nova-1;src:url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:chaparral-pro-1;src:url(https://use.typekit.net/af/9da37c/00000000000000003b9aee4e/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/9da37c/00000000000000003b9aee4e/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/9da37c/00000000000000003b9aee4e/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:chaparral-pro-1;src:url(https://use.typekit.net/af/6d0ba6/00000000000000003b9aee4d/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/6d0ba6/00000000000000003b9aee4d/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/6d0ba6/00000000000000003b9aee4d/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:chaparral-pro-1;src:url(https://use.typekit.net/af/d07f20/00000000000000003b9aee4b/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/d07f20/00000000000000003b9aee4b/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/d07f20/00000000000000003b9aee4b/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:chaparral-pro-1;src:url(https://use.typekit.net/af/17d530/00000000000000003b9aee4f/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/17d530/00000000000000003b9aee4f/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/17d530/00000000000000003b9aee4f/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}</style><link rel="stylesheet" href="./Channel Bonding - Cisco Meraki_files/css" media="all">
+</head>
+<body class="reference yui-skin-sam action-view">
+<noscript><div class="noscript">This application requires Javascript to be enabled.</div></noscript>
+<!-- START Unseated user navigation -->
+<div class="mt-wrapper mt-header">
+    <div class="mt-user-nav">
+        <ul class="mt-login-links">
+        <!-- START Logged out user nav -->
+                                                <li id="login-link" class="last">
+                                                <a href="https://documentation.meraki.com/@app/auth/3/login?returnto=https%3A%2F%2Fdocumentation.meraki.com%2FMR%2FRadio_Settings%2FChannel_Bonding" class="sso-sign-in login-link" rel="nofollow" tabindex="1">Sign in</a>                    </li>
+                    <li id="forgot-password-link" class="last"><a title="Forgot Password" class="" href="https://documentation.meraki.com/Special:UserPassword" rel="nofollow" tabindex="6">Forgot Password</a>
+</li>
+                                    <!-- END Logged out user nav -->
+
+        <!-- START Logged in user nav -->
+                    <!-- END Logged in user nav -->
+        </ul>
+
+        <!-- START Login form -->
+        <form action="https://documentation.meraki.com/@app/auth/3/login?returnto=https%3A%2F%2Fdocumentation.meraki.com%2FMR%2FRadio_Settings%2FChannel_Bonding" method="GET" id="quick-login">
+	<div class="row">
+		<span class="col col-btn">
+            <input type="submit" tabindex="5" value="Sign in" class="primary btn">
+		</span>
+	</div>
+</form>
+        <!-- END Login form -->
+    </div>
+</div>
+<!-- END Unseated user navigation -->
+
+<script type="text/javascript">/*<![CDATA[*/
+/* Begin Custom Content 2/13/19 by Cameron Moody - Fullstory Snippet*/ 
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_org'] = '1SQK6';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};
+})(window,document,window['_fs_namespace'],'script','user');
+/* End Custom Content 2/13/19 by Cameron Moody - Fullstory Snippet*//*]]>*/</script>
+<script src="./Channel Bonding - Cisco Meraki_files/hum1oye.js.download"></script><script>/*<![CDATA[*/try{Typekit.load();}catch(e){}/*]]>*/</script>
+
+<div class="mt-header-help"><div class="mt-header-help-container"><div class="mt-logo"><a class="internal" href="https://documentation.meraki.com/" rel="internal"><img class="mt-cdn" src="./Channel Bonding - Cisco Meraki_files/logo" alt=""></a></div><div class="mt-logo2"><a class="internal" href="https://documentation.meraki.com/" rel="internal"><img alt="" class="mt-cdn internal" src="./Channel Bonding - Cisco Meraki_files/documentation-logo-large.png"></a></div><div id="navcontainer"><ul id="navlist"><li><a href="https://account.meraki.com/secure/login/dashboard_login" rel="external nofollow" target="_blank" class="link-https">Dashboard</a></li><li><a href="https://meraki.cisco.com/support" rel="external nofollow" target="_blank" class="link-https">Support</a></li><li><a id="current" href="https://meraki.cisco.com/form/contact" rel="external nofollow" target="_blank" class="link-https">Contact Sales</a></li></ul></div></div><div class="mt-header-search"><div class="mt-inputredirect"><form class="ui-dform mt-inputredirect-form"><fieldset class="ui-dform-fieldset"><div class="mt-field"><label for="mt-inputredirect-input" class="mt-inputredirect-label ui-dform-label">Query</label><input class="mt-help mt-inputredirect-input ui-dform-input" id="mt-inputredirect-input" autocomplete="off" placeholder="Search" data-url="/Special:Search" data-key="q" data-params="{&quot;path&quot;:&quot;&quot;}"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only mt-inputredirect-button" role="button"><span class="ui-button-text">Search</span></button></div></fieldset></form></div></div></div>
+
+<script type="text/javascript">/*<![CDATA[*/
+window.onload = function(){
+     document.querySelector('.mt-template-select-launcher').onclick = function(){
+         if (window.location.href == "https://documentation.meraki.com/zMeraki_Internal/Draft_Articles"){
+             return false;
+         }
+         else{
+             var r = confirm("Please be aware that all new pages should be created from zMeraki_Internal/Draft_Articles to ensure the correct permissions on the page.\nChoose 'OK' to be redirected\nChoose 'Cancel' to reload the page.");
+             if (r==true){
+                 window.location.assign("https://documentation.meraki.com/zMeraki_Internal/Draft_Articles");
+             }
+             else{
+                 window.location.assign(window.location.href);
+             }
+         };        
+     };
+ };/*]]>*/</script>
+
+
+<div class="mt-wrapper">
+    <div class="mt-logo"><a class="logo-anonymous" href="https://documentation.meraki.com/" title="Cisco Meraki">
+    <img src="./Channel Bonding - Cisco Meraki_files/1446686079-logo.png" alt="Cisco Meraki" title="Cisco Meraki">
+</a></div>
+    <div class="mt-content">
+
+    <!-- START Site navigation -->
+    <div class="mt-site-nav">
+                    <!-- START Content navigation -->
+            <ul><li class="home"><a class="help-center" title="Home" href="https://documentation.meraki.com/" rel="internal">Home</a></li><li><div class="product-menu quick-more" title="Wireless LAN"><a class="drop-link" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding#" title="Wireless LAN">Wireless LAN</a><ul class="dropdown" style="display: none;"><li><a rel="custom" href="https://documentation.meraki.com/Getting_Started">Getting Started</a></li><li><a rel="custom" href="https://documentation.meraki.com/Go">Meraki Go</a></li><li><a rel="custom" href="https://documentation.meraki.com/MC">Communications</a></li><li><a rel="custom" href="https://documentation.meraki.com/MI">Meraki Insight</a></li><li class="mt-list-selected"><a rel="custom" href="https://documentation.meraki.com/MR">Wireless LAN</a></li><li><a rel="custom" href="https://documentation.meraki.com/MS">Switches</a></li><li><a rel="custom" href="https://documentation.meraki.com/MV">Smart Cameras</a></li><li><a rel="custom" href="https://documentation.meraki.com/MX">Security and SD-WAN</a></li><li><a rel="custom" href="https://documentation.meraki.com/SM">Endpoint Management</a></li><li><a rel="custom" href="https://documentation.meraki.com/zGeneral_Administration">General Administration</a></li></ul></div></li><li><div class="article-menu quick-more" title="Radio Settings"><a class="drop-link" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding#" title="Radio Settings">Radio Settings</a><ul class="dropdown" style="display: none;"><li><a rel="custom" href="https://documentation.meraki.com/MR/Access_Control">Access Control</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Bluetooth">Bluetooth</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Client_Addressing_and_Bridging">Client Addressing and Bridging</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Deployment_Guides">Deployment Guides</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Encryption_and_Authentication">Encryption and Authentication</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Firewall_and_Traffic_Shaping">Firewall and Traffic Shaping</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Group_Policies_and_Blacklisting">Group Policies and Blacklisting</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Installation_Guides">Installation Guides</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Monitoring_and_Reporting">Monitoring and Reporting</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/MR_Quick_Start">MR Quick Start</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Other_Topics">Other Topics</a></li><li class="mt-list-selected"><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings">Radio Settings</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Splash_Page">Splash Page</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/WiFi_Basics_and_Best_Practices">WiFi Basics and Best Practices</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Wireless_Health">Wireless Health</a></li></ul></div></li><li class="divider"><div class="article-menu quick-more" title="Channel Bonding"><a class="drop-link" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding#" title="Channel Bonding">Channel Bonding</a><ul class="dropdown" style="display: none;"><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Auto_Channel">Auto Channel</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Auto_TX_Power">Auto TX Power</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Band_Steering_Overview">Band Steering Overview</a></li><li class="mt-list-selected"><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding">Channel Bonding</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Planning_Overview">Channel Planning Overview</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Dynamic_Frequency_Selection_(DFS)">Dynamic Frequency Selection (DFS)</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/EU_Compliance_Information">EU Compliance Information</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Manually_Changing_Channels_in_a_Mesh_Network">Manually Changing Channels in a Mesh Network</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Manual_Channel_Selection_and_Transmit_Power_Adjustment">Manual Channel Selection and Transmit Power Adjustment</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Max_Radio_Power_Limitations">Max Radio Power Limitations</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Minimum_Bitrate_Control">Minimum Bitrate Control</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/MR_Wireless_Regulatory_Domains">MR Wireless Regulatory Domains</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Receive_Start_of_Packet_(RX-SOP)">Receive Start of Packet (RX-SOP)</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/RF_Profiles">RF Profiles</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Spectrum_Analysis_Overview">Spectrum Analysis Overview</a></li><li><a rel="custom" href="https://documentation.meraki.com/MR/Radio_Settings/Transmit_Power_and_Antenna_Configuration">Transmit Power and Antenna Configuration</a></li></ul></div></li></ul>            <!-- END Content navigation -->
+            </div>
+    <!-- END Site navigation -->
+
+        <!-- START Page Content -->
+    <div class="mt-content-container">
+        <div id="flash-messages"><div class="dekiFlash"></div></div>        <span class="product-portfolio-hidden"><span class="dw-hierarchy"><a href="https://documentation.meraki.com/" class="deki-ns">Home</a> &gt; <a href="https://documentation.meraki.com/MR" class="deki-ns">Wireless LAN</a> &gt; <a href="https://documentation.meraki.com/MR/Radio_Settings" class="deki-ns">Radio Settings</a> &gt; <a href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding" class="deki-ns current">Channel Bonding</a></span></span>                <h1 id="title" data-title-editor-version="legacy" data-title-editor-available="false" style="visibility: visible;">
+    <div id="deki-page-title" class="ui-state-noedit">
+        <div class="state-view">
+            <span class="title">Channel Bonding</span>
+        </div>
+    </div>
+</h1>
+        <div id="page-top">
+        <div id="pageToc"><div class="pageToc"><h5 style="visibility: visible;">Table of contents</h5><div class="tocdata"><em>No headers</em></div></div></div>
+    <div id="topic">
+        <div id="pageText">
+                <p style="visibility: visible;">"Legacy" 802.11 clients use 20MHz channels. To achieve higher data rates, <a target="_blank" href="http://www.meraki.com/lib/pdf/meraki_whitepaper_802_11n.pdf" rel="external nofollow" class="external">802.11n</a> specifies the use of 40MHz wide channels. &nbsp;Channel bonding commonly uses two contiguous 20MHz channels to create a single 40MHz channel. While channel bonding can provide higher data rates, it will also result in fewer channels available for 2.4GHz or 5GHz devices.&nbsp;</p> <p style="visibility: visible;">In some high-density client environments where wireless saturation is high, having more available 20MHz channels to spread client usage provides better performance than having fewer 40MHz channels. In addition, not all&nbsp;regulatory domains support the use of a 40-MHz channel.&nbsp;</p> <p style="visibility: visible;">A wide channel is made up of a "primary" and "secondary" channel. &nbsp;The "primary" channel is used for 802.11n clients that only support 20MHz channel bandwidth (e.g. legacy clients). For clients that support wide channel capabilities, both primary and secondary channels can be used.</p> <p style="visibility: visible;">The location of the primary channel is specified when you <a target="_blank" title="MR/Radio_Settings/Channel_Selection/Manually_Changing_Channels_in_a_Mesh_Network" href="https://documentation.meraki.com/MR/Radio_Settings/Manually_Changing_Channels_in_a_Mesh_Network" rel="internal">configure channel selection.</a> The primary channel is either the upper or lower half of the 40MHz channel. For example, if you are using wide channel in 5GHz and choose 36+, then channel 36 (lower half) would be the primary and the secondary would exist at channel 40 (upper half). Conversely, if you specified 40- you would be specifying channel 40 as the primary(upper half) and the secondary would be channel 36 (lower half).</p> <p style="visibility: visible;"><img alt="" class="internal" style="width: 734px; height: 409px; max-width: 1000px;" width="734px" height="409px" src="./Channel Bonding - Cisco Meraki_files/a3da4e58-cb7c-4927-8665-a27020b90f27.png"></p> <p style="visibility: visible;"><img alt="" class="internal" style="width: 718px; height: 738px; max-width: 1000px;" width="718px" height="738px" src="./Channel Bonding - Cisco Meraki_files/889821a6-a7a6-49fe-bce1-bde55fca7221.png"></p>
+        </div>
+    </div>
+</div>
+
+            <ul class="mt-pagination">
+            <li><a title="Previous" class="prev  " href="https://documentation.meraki.com/MR/Radio_Settings/Band_Steering_Overview" onclick="">Previous</a>
+</li>
+            <li><a title="Next" class="next  " href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Planning_Overview" onclick="">Next</a>
+</li>
+        </ul>
+                    <div class="widget">
+                        <div class="widget-tabs">
+                <ul>
+                                                        </ul>
+            </div>
+
+            <!-- START Comments -->
+                        <!-- END Comments -->
+
+            <!-- START File attachments -->
+                        <!-- END File attachments -->
+        </div>
+      </div>
+    </div>
+    <!-- END Page Content -->
+
+    <!--START Right Tray -->
+    <div class="tray" id="tray">
+    <div class="trayframe">
+        <div class="mt-tray-header">
+            <!-- START Search field -->
+            <div class="mt-site-search">
+                    <form action="https://documentation.meraki.com/Special:Search">
+            <input name="search" type="text" placeholder="Search" value="" class="search-field">
+            <input name="qid" id="mt-qid-skin" type="hidden" value="">
+            <input name="path" id="mt-search-path" type="hidden" value="">
+            <input name="fpid" id="mt-search-filter-id" type="hidden" value="2095">
+            <input name="fpth" id="mt-search-filter-path" type="hidden" value="">
+            <input type="submit" class="search-button" value="Search">
+                    </form>
+                    </div>
+            <!-- END Search field -->
+        </div>
+        <div class="traybody">
+            
+            <!-- START Page controls -->
+            <div class="section no-line" id="controls">
+                <ul class="page-controls">
+                    <li class="nav-icon hide"><a title="" class="" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding#"></a>
+</li>
+                                                <li class="page restricted" style="display: none;"><a title="" class="page-restricted  disabled" href="https://documentation.meraki.com/MR/Radio_Settings/Channel_Bonding#" onclick=""></a>
+</li>
+                                <li class="pdf"><a title="Save as PDF" class=" page-pdf-export-launcher" href="https://documentation.meraki.com/@api/deki/pages/2095/pdf/Channel%2bBonding.pdf?stylesheet=default" onclick="" rel="nofollow">Save as PDF</a>
+</li>
+                    <li class="email"><a title="Email page" class=" " href="mailto:?subject=Anonymous%20User%20wants%20to%20share%20a%20link%20%7C%20Cisco%20Meraki&amp;body=Anonymous%20User%20wants%20to%20share%20a%20link%20on%20Cisco%20Meraki%3A%20https%3A%2F%2Fdocumentation.meraki.com%2FMR%2FRadio_Settings%2FChannel_Bonding" onclick="">Email page</a>
+</li>
+                </ul>
+            </div>
+            <!-- END Page controls -->
+
+            <!-- START Social sharing -->
+                        <!-- END Social sharing -->
+
+            <!-- START Page history -->
+            <div class="section" id="page-version-tags">
+                <div class="updated-label">Last modified</div>
+    <div class="modified mt-last-updated" data-timestamp="2015-02-20T02:03:30Z">Feb 20, 2015</div>
+            </div>
+            <!-- END Page history -->
+
+            <!-- START Home content -->
+                        <!-- END Home content -->
+
+            
+            <!-- START Related articles -->
+            <div class="section" id="related">
+                <h2>Related articles</h2>
+                <div class="mt-related-listings-container">
+                    <div class="noindex">
+                        <div class="mt-related-pages">
+                            <ul>
+                                <li class="mt-related-empty-listing"><span>There are no recommended articles.</span></li>
+                            <li class="mt-related-listing mt-related-listing-detailed"><a class="mt-related-listing-link" href="https://documentation.meraki.com/MR/Radio_Settings/Auto_TX_Power" title="Auto TX Power" data-ga-label="related-link-detailed-1"><span class="mt-related-listing-link-icon mt-icon-article-topic"></span><span class="mt-related-listing-link-text">Auto TX Power</span></a></li><li class="mt-related-listing mt-related-listing-detailed"><a class="mt-related-listing-link" href="https://documentation.meraki.com/MR/Radio_Settings/Band_Steering_Overview" title="Band Steering Overview" data-ga-label="related-link-detailed-2"><span class="mt-related-listing-link-icon mt-icon-article-topic"></span><span class="mt-related-listing-link-text">Band Steering Overview</span></a></li><li class="mt-related-listing mt-related-listing-detailed"><a class="mt-related-listing-link" href="https://documentation.meraki.com/MR/Radio_Settings/EU_Compliance_Information" title="EU Compliance Information" data-ga-label="related-link-detailed-3"><span class="mt-related-listing-link-icon mt-icon-article-reference"></span><span class="mt-related-listing-link-text">EU Compliance Information</span></a></li><li class="mt-related-listing mt-related-listing-detailed"><a class="mt-related-listing-link" href="https://documentation.meraki.com/MR/Radio_Settings/Manually_Changing_Channels_in_a_Mesh_Network" title="Manually Changing Channels in a Mesh Network" data-ga-label="related-link-detailed-4"><span class="mt-related-listing-link-icon mt-icon-article-reference"></span><span class="mt-related-listing-link-text">Manually Changing Channels in a Mesh Network</span></a></li><li class="mt-related-listing mt-related-listing-detailed"><a class="mt-related-listing-link" href="https://documentation.meraki.com/MR/Radio_Settings/Manual_Channel_Selection_and_Transmit_Power_Adjustment" title="Manual Channel Selection and Transmit Power Adjustment" data-ga-label="related-link-detailed-5"><span class="mt-related-listing-link-icon mt-icon-article-reference"></span><span class="mt-related-listing-link-text">Manual Channel Selection and Transmit Power Adjustment</span></a></li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Related Articles-->
+            
+                             <div class="section hide" id="site-hierarchy">
+                    <!-- dynamically injected -->
+                </div>
+            
+            <!-- START Tags -->
+            <div class="tags section" id="anchor-tags">
+                <h2>Tags</h2>
+                <div id="live-tags-edit-area">
+                    <script type="application/json" id="mt-localizations-live-tags">/*<![CDATA[*/{"Page.LiveTags.error.custom":"Tag not found","Page.LiveTags.error.custom.detail":"The tag you entered is not valid for the \"{0}\" tag type","Page.LiveTags.error.skipped-showall":"Show all","Page.LiveTags.error.updating":"Could not update tags for the following pages (check permissions):","Page.LiveTags.error.updating-failed":"There was an error updating tags:","Page.LiveTags.tag.remove":"Remove"}/*]]>*/</script><div class="live-tag-section" id="live-tag-normal-tags"><div id="live-tag-entries"><div class="live-tag-entry" title="channel width"><a href="https://documentation.meraki.com/Special:Search?tags=%22channel+width%22" class="live-tag-link" rel="nofollow">channel width</a></div><div class="live-tag-entry" title="channel selection"><a href="https://documentation.meraki.com/Special:Search?tags=%22channel+selection%22" class="live-tag-link" rel="nofollow">channel selection</a></div><div class="clear"></div></div></div>                    <div class="br"></div>
+                </div>
+            </div>
+            <!-- END Tags -->
+
+            <!-- START Classifications -->
+            <div class="classifications section" id="classifications">
+                <h2>Classifications</h2>
+                <span class="live-tag-message">This page has no classifications.</span>            </div>
+            <!-- END Classifications -->
+
+                    <div class="custom-tray">
+                
+
+<div class="section">
+<div class="section"><h2 style="visibility: visible;">Explore the Product</h2><p style="visibility: visible;"><a href="https://meraki.cisco.com/products/wireless" rel="external nofollow" target="_blank" class="link-https">Click to Learn More</a></p></div>
+</div>
+
+
+
+
+
+
+
+<div class="section">
+<div mt-section-origin="Template:Custom/Views/Sidetray" class="mt-section" id="section_2"><h2 class="editable" style="visibility: visible;">Article ID</h2>
+ID: 2095</div></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--END Right Tray -->
+
+    <!--START Footer -->
+    <div class="mt-foot">
+    <ul class="mt-site-info">
+        <li class="last">© Copyright 2019 Cisco Meraki</li>
+    </ul>
+    <div class="poweredBy"><a href="http://mndt.ch/2uJJBIj" class="mt-poweredby product " title="MindTouch 4" target="_blank">
+   Powered by MindTouch
+   <span class="mt-registered">®</span>
+</a></div>    </div>
+    <!--END Footer -->
+</div>
+
+<div id="menuFiller"></div><div id="bodyHeight"></div><div class="clearfix"></div><div id="footerContent"><div id="contact-sales" class="float-left"><h2 style="visibility: visible;">Explore Meraki</h2><p style="visibility: visible;">You can find out more about Cisco Meraki on our main site, including information on products, contacting sales and finding a vendor.</p><a href="https://goo.gl/wSNusP" rel="external nofollow" target="_blank" class="link-https"><b>Explore Meraki</b></a><br></div><div id="contact-support" class="float-left"><h2 style="visibility: visible;">Contact Support</h2><p style="visibility: visible;">Most questions can be answered by reviewing our documentation, but if you need more help, Cisco Meraki Support is ready to work with you.</p><a class="internal" href="https://documentation.meraki.com/zGeneral_Administration/Support/Contacting_Support" rel="internal"><b>Open a Case</b></a><br></div><div id="ask-community" class="float-left"><h2 style="visibility: visible;">Ask the Community</h2><p style="visibility: visible;">In the Meraki Community, you can keep track of the latest announcements, find answers provided by fellow Meraki users and ask questions of your own.</p><a href="https://community.meraki.com/?utm_source=documentation&amp;utm_medium=footer" rel="external nofollow" target="_blank" class="link-https"><b>Visit the Community</b></a><br></div><br></div><div id="crfoot"><div id="copyright" class="float-left">© 2018 Cisco Systems, Inc</div></div>
+
+
+<div id="mt-modal-container"></div>
+    <script type="text/javascript" async="async" src="./Channel Bonding - Cisco Meraki_files/f1.js.download"></script>
+
+<script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/ui.widget.helpWidget.js.download"></script><script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/serviceworker-unregister.js.download"></script>
+
+
+
+
+
+<script type="text/javascript" data-mindtouch-module="true" src="./Channel Bonding - Cisco Meraki_files/f1.widget.js.download"></script></body></html>
